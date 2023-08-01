@@ -1,15 +1,10 @@
-﻿-- Exported from QuickDBD: https://www.quickdatabasediagrams.com/
--- Link to schema: https://app.quickdatabasediagrams.com/#/d/6xddPJ
--- NOTE! If you have used non-SQL datatypes in your design, you will have to change these here.
-
-
-CREATE TABLE "Campaigns" (
+CREATE TABLE Campaigns(
     "cf_id" INTEGER   NOT NULL,
     "contact_id" INTEGER   NOT NULL,
     "company_name" VARCHAR   NOT NULL,
     "description" VARCHAR   NOT NULL,
     "goal" VARCHAR   NOT NULL,
-    "pledged" INTEGER   NOT NULL,
+    "pledged" VARCHAR   NOT NULL,
     "outcome" VARCHAR   NOT NULL,
     "backers_count" INTEGER   NOT NULL,
     "country" VARCHAR   NOT NULL,
@@ -23,7 +18,9 @@ CREATE TABLE "Campaigns" (
      )
 );
 
-CREATE TABLE "Category" (
+SELECT * FROM Campaigns
+
+CREATE TABLE Category(
     "category_id" VARCHAR   NOT NULL,
     "category" VARCHAR   NOT NULL,
     CONSTRAINT "pk_Category" PRIMARY KEY (
@@ -31,7 +28,9 @@ CREATE TABLE "Category" (
      )
 );
 
-CREATE TABLE "Subcategory" (
+SELECT * FROM Category
+
+CREATE TABLE Subcategory(
     "subcategory_id" VARCHAR   NOT NULL,
     "subcategory" VARCHAR   NOT NULL,
     CONSTRAINT "pk_Subcategory" PRIMARY KEY (
@@ -39,7 +38,9 @@ CREATE TABLE "Subcategory" (
      )
 );
 
-CREATE TABLE "Contacts" (
+SELECT * FROM Subcategory
+
+CREATE TABLE Contacts(
     "contact_id" INTEGER   NOT NULL,
     "first_name" VARCHAR   NOT NULL,
     "last_name" VARCHAR   NOT NULL,
@@ -49,3 +50,4 @@ CREATE TABLE "Contacts" (
      )
 );
 
+SELECT * FROM Contacts
